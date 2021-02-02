@@ -1,0 +1,13 @@
+<div class="container">
+ <div class="row justify-content-center">
+   <div class="col-6">
+    <h1>Make a booking</h1>
+    <%= simple_form_for [@monster, @booking] do |f| %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+    <%= link_to 'Cancel', root_path, class: 'text-danger mr-2' %>
+    <%= f.submit "Book This Monster", class: 'btn btn-primary' %>
+  <% end %>
+    </div>
+  </div>
+</div>
