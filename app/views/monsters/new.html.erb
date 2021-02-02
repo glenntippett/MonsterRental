@@ -1,2 +1,11 @@
-<h1>Monsters#new</h1>
-<p>Find me in app/views/monsters/new.html.erb</p>
+<div class="container">
+  <h1>Add a new Monster</h1>
+  <%= simple_form_for @monster do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :description, label: "Describe Your Monster" %>
+  <%= link_to 'Cancel', root_path, class: 'text-danger mr-2' %>
+  <%= f.submit "Confirm", class: 'btn btn-success' %>
+  <% end %>
+</div>
+
