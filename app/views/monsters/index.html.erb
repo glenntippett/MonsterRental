@@ -4,5 +4,5 @@
 
 <% @monsters.each do |monster| %>
   <h1><%= monster.name %></h1>
+   <%= link_to 'Edit', edit_monster_path(monster) %>
 <% end %>
-
