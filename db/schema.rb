@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_084422) do
+ActiveRecord::Schema.define(version: 2021_02_04_085520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "total_price"
+    t.bigint "user_id", null: false
+    t.bigint "monster_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["monster_id"], name: "index_bookings_on_monster_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "monsters", force: :cascade do |t|
     t.string "name"
@@ -26,12 +38,14 @@ ActiveRecord::Schema.define(version: 2021_02_02_084422) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "content"
     t.bigint "booking_id"
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,9 +56,13 @@ ActiveRecord::Schema.define(version: 2021_02_02_084422) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "bookings", "monsters"
+  add_foreign_key "bookings", "users"
   add_foreign_key "monsters", "users"
 end
