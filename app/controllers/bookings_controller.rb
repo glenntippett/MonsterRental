@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
 
   def destroy
     make_booking
-    @bookig.destroy
+    @booking.destroy
     redirect_to root_path
   end
 
