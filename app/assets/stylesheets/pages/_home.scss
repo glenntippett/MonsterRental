@@ -1,1 +1,23 @@
-// Specific CSS for your home-page
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    color: white;
+    font-size: 8rem;
+  }
+  p {
+    color: white;
+    font-size: 24px;
+    opacity: 0.8;
+  }
+}
+
+.homepage-bg {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image-url('monster-bg.jpg');
+  background-size: cover;
+  margin: 0;
+}
