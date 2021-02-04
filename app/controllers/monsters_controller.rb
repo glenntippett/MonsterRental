@@ -29,8 +29,8 @@ class MonstersController < ApplicationController
   end
 
   def destroy
-    @monster = Monster.destroy
-    redirect_to root_path
+    @monster = Monster.destroy(set_monster)
+    redirect_to monsters_path
   end
 
   private

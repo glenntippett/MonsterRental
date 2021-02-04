@@ -2,7 +2,8 @@
   <h1><%= @monster.name %></h1>
   <p>$<%= @monster.price %></p>
   <p><%= @monster.description %></p>
-  <%= link_to 'edit', edit_monster_path(@monster) %>
+  <%= link_to 'Edit', edit_monster_path(@monster) %>
+   <%= link_to 'Delete', monsters_path, class: 'btn text-danger' %>
   <%= link_to 'Back', monsters_path, class: 'btn text-danger' %>
   <%= link_to 'Check monster availability' new_ monster_booking_path, class: 'btn text-danger' %>
 </div>
