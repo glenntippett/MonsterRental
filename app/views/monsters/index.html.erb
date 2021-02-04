@@ -1,2 +1,14 @@
-<h1>Monsters#index</h1>
-<p>Find me in app/views/monsters/index.html.erb</p>
+<div class="container">
+  <h1>Welcome to Monster Rental</h1>
+
+  <%= link_to 'Add Monster', new_monster_path %>
+
+  <% @monsters.each do |monster| %>
+  <h1><%= monster.name %></h1>
+
+  <%= link_to 'View this Monster', monster_path(monster), class: 'btn btn-primary' %>
+<% end %>
+
+</div>
+
+
