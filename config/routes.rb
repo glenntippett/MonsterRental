@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :monsters
+  resources :monsters do
+  resources :booking, only: [:new, :update, :destroy]
+  end
 
 end
