@@ -24,7 +24,7 @@ class MonstersController < ApplicationController
   def edit; end
 
   def update
-    @monster = Monster.update(monster_params)
+    @monster.update(monster_params)
     redirect_to monster_path(@monster)
   end
 
