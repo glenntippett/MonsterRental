@@ -24,13 +24,13 @@ class MonstersController < ApplicationController
   def edit; end
 
   def update
-    @monster = Monster.update(monster_params)
+    @monster.update(monster_params)
     redirect_to monster_path(@monster)
   end
 
   def destroy
-    @monster = Monster.destroy
-    redirect_to root_path
+    @monster.destroy
+    redirect_to monsters_path
   end
 
   private
