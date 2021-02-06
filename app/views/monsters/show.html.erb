@@ -1,10 +1,13 @@
-<div class="container">
-  <h1><%= @monster.name %></h1>
+<div class="container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @monster.photo.key, height: 300, width: 400, crop: :fill %>')">
+
+<h1><%= @monster.name %></h1>
+
   <p>$<%= @monster.price %></p>
   <p><%= @monster.description %></p>
-  <%= link_to 'Edit', edit_monster_path(@monster) %>
 
-   <%= link_to 'Delete', monster_path(@monster), class: 'btn text-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to 'Edit', edit_monster_path(@monster) %>
+  <%= link_to 'Delete', monster_path(@monster), class: 'btn text-danger', method: :delete, data: { confirm: "Are you sure?" } %>
   <%= link_to 'Back', monsters_path, class: 'btn text-danger' %>
   <%= link_to 'Check monster availability', new_monster_booking_path(@monster), class: 'btn text-danger' %>
 </div>
+
