@@ -1,0 +1,12 @@
+<div class="container">
+    <h3> Thanks for booking <%= @monster.name %> </h3>
+    <p>Details:</p>
+    <li><strong><%= @monster.name %></strong></li>
+    <li><strong>From</strong> <%= @booking.start_date %></li>
+    <li><strong>To</strong> <%= @booking.end_date %></li>
+    <li>
+      <strong>Total:</strong> $
+      <%= @monster.price * ((@booking.end_date - @booking.start_date).to_i) %>
+    </li>
+    <%= link_to "Back", monsters_path %>
+</div>
