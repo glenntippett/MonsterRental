@@ -1,12 +1,20 @@
-<div class="container">
-    <h3> Thanks for booking <%= @monster.name %> </h3>
-    <p>Details:</p>
-    <li><strong><%= @monster.name %></strong></li>
-    <li><strong>From</strong> <%= @booking.start_date %></li>
-    <li><strong>To</strong> <%= @booking.end_date %></li>
-    <li>
-      <strong>Total:</strong> $
+<div class="container" style="text-align: center; width: 500px; margin-top: 50px;
+">
+  <div style="margin:50px;">
+  <i class="far fa-check-circle fa-3x" style="color:green;"></i>
+  <h2> Thanks for booking  </h2><br>
+  <h1><%= @monster.name %><h1>
+    <%= cl_image_tag @monster.photo.key, height: 300, width: 400, crop: :fill %>
+</div>
+    <div style="text-align: left; margin:50px">
+    <p>Your booking details:</p>
+     <i class="fas fa-calendar-check" style="color:green;"></i><strong>  From</strong> <%= @booking.start_date %>
+     <strong>To</strong> <%= @booking.end_date %><br>
+    <i class="fas fa-dollar-sign" style="color:green;"></i><strong>   Total:</strong> $
       <%= @monster.price * ((@booking.end_date - @booking.start_date).to_i) %>
-    </li>
+    </div>
+
+
     <%= link_to "Back", monsters_path %>
 </div>
+
