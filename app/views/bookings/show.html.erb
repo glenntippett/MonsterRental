@@ -1,14 +1,12 @@
 <div class="container">
-    <h3> Thanks <%= @user.name %> for booking your monster. </h3>
+    <h3> Thanks for booking <%= @monster.name %> </h3>
     <p>Details:</p>
     <li><strong><%= @monster.name %></strong></li>
-    <li><%= img: "" %></li>
     <li><strong>From</strong> <%= @booking.start_date %></li>
     <li><strong>To</strong> <%= @booking.end_date %></li>
     <li>
       <strong>Total:</strong> $
-      <%= ((@monster.total_price / 30) * (Date.parse(@booking.end_date) - Date.parse(@booking.start_date))).to_i %>
+      <%= @monster.price * ((@booking.end_date - @booking.start_date).to_i) %>
     </li>
-    <%= link_to "View Bookings", user_booking_path(current_user) %>
-    <%= link_to "Back", root_path %>
+    <%= link_to "Back", monsters_path %>
 </div>

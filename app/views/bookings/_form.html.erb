@@ -1,6 +1,5 @@
 <div class="container">
-<%= simple_form_for(@booking) do |f| %>
-    <%= f.input :name %>
+<%= simple_form_for [@monster, @booking] do |f| %>
     <%= f.input :start_date, as: :date, html5: true, start_day: Date.today.day %>
     <%= f.input :end_date, as: :string, as: :date, html5: true, start_day: Date.today.day %>
     <%= f.submit "Confirm booking", class: "btn-success" %>
