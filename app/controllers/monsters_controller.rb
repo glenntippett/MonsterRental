@@ -14,6 +14,7 @@ class MonstersController < ApplicationController
   def create
     @monster = Monster.new(monster_params)
     @monster.user = current_user
+
     if @monster.save
       redirect_to monsters_path
     else
@@ -36,7 +37,7 @@ class MonstersController < ApplicationController
   private
 
   def monster_params
-    params.require(:monster).permit(:name, :description, :price)
+    params.require(:monster).permit(:name, :description, :price, :photo)
   end
 
   def set_monster

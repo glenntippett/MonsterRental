@@ -4,6 +4,7 @@
   <%= f.input :name %>
   <%= f.input :price %>
   <%= f.input :description, label: "Describe Your Monster" %>
+  <%= f.input :photo, as: :file %>
   <%= link_to 'Cancel', root_path, class: 'text-danger mr-2' %>
   <%= f.submit "Confirm", class: 'btn btn-success' %>
   <% end %>
