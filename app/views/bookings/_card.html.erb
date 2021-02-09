@@ -1,0 +1,15 @@
+ <div class="booking-card"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.monster.photo.key, height: 300, width: 400, crop: :fit %>')">
+          <h1>
+           <%= link_to booking.monster.name, monster_path(booking.monster), class: 'text-white booking-card-name' %>
+          </h1>
+          <!-- Aya to update link to review -->
+              <% if booking.review.nil? %>
+           <p><%= link_to 'Leave a review', '#', class: 'text-white booking-card-name' %></p>
+              <% else %>
+            <p> <%=booking.start_date%> to <%=booking.end_date %></p>
+           <p><%=booking.review.content%></p>
+           <p><%=booking.review.rating%></p>
+          <% end %>
+        <!-- End of Card -->
+        </div>
