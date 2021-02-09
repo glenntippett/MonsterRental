@@ -3,13 +3,7 @@
     <div class="row">
       <% @monsters.each do |monster| %>
       <div class="col-md-6">
-        <div class="booking-card"
-          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path monster.photo.key, height: 300, width: 400, crop: :fit %>')">
-          <h1>
-            <%= link_to monster.name, monster_path(monster), class: 'text-white booking-card-name' %>
-          </h1>
-        <!-- End of Card -->
-        </div>
+      <%= render 'monsters/card', monster: monster %>
       </div>
       <% end %>
     </div>
@@ -21,19 +15,7 @@
     <div class="row">
       <% @completed_bookings.each do |booking| %>
       <div class="col-md-6">
-        <div class="booking-card"
-          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.monster.photo.key, height: 300, width: 400, crop: :fit %>')">
-          <h1>
-           <%= link_to booking.monster.name, monster_path(booking.monster), class: 'text-white booking-card-name' %>
-          </h1>
-           <p> <%=booking.start_date%> to <%=booking.end_date %></p>
-           <p><%=booking.review.content%></p>
-           <p><%=booking.review.rating%></p>
-          <!-- Aya to update link to review -->
-           <p><% if booking.review? == false %></p>
-           <p><%= link_to booking.review, new_review_path, class: 'text-white booking-card-name' %></p>
-        <!-- End of Card -->
-        </div>
+        <%= render 'bookings/card', booking: booking %>
       </div>
       <% end %>
     </div>
@@ -45,13 +27,7 @@
     <div class="row">
       <% @future_bookings.each do |booking| %>
       <div class="col-md-6">
-        <div class="monster-card"
-          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.monster.photo.key, height: 300, width: 400, crop: :fit %>')">
-          <h1>
-            <%= link_to booking.monster.name, monster_path(booking.monster), class: 'text-white monster-card-name' %>
-          </h1>
-        <!-- End of Card -->
-        </div>
+        <%= render 'bookings/card', booking: booking %>
       </div>
       <% end %>
     </div>
