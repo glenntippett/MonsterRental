@@ -1,16 +1,15 @@
 
 <div class="card-monster">
-  <img src="<%= cl_image_tag @monster.photo.key, height: 300, width: 400, crop: :fill %>"
+  <img src= <%= cl_image_tag @monster.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="card-monster-infos">
-    <div>
-      <h2><%=@monster.name %></h2>
-      <p><%=@monster.description%></p>
-    </div>
+    <h2><%=@monster.name %></h2>
+    <p><%=@monster.description%></p>
     <h2 class="card-monster-pricing">$<%= @monster.price %></h2>
   </div>
-   <%= link_to "Edit", edit_monster_path(@monster),class: "btn btn-ghost" %>
-   <%= link_to "Delete", monster_path(@monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
-   <%= link_to "Book monster", new_monster_booking_path(@monster), class: "btn btn-ghost" %>
-   <%= link_to "Back", monsters_path, class: "btn btn-ghost" %>
+  <%= link_to "Edit", edit_monster_path(@monster),class: "btn btn-ghost" %>
+     <%= link_to "Delete", monster_path(@monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
+     <%= link_to "Book", new_monster_booking_path(@monster), class: "btn btn-ghost" %>
+     <%= link_to "Back", monsters_path, class: "btn btn-ghost" %>
 </div>
+
 
