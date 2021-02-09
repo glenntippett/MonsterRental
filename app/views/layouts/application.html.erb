@@ -14,9 +14,7 @@
 
 <body>
   <%= render 'components/nav' %>
- <span class="notice"><%= notice %></span>
- <p class="alert"><%= alert %></p>
-
+  <%= render 'shared/flashes' %>
  <%= yield %>
 </body>
 </html>
