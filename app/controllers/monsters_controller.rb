@@ -3,7 +3,11 @@ class MonstersController < ApplicationController
   before_action :set_monster, only: [:show, :edit, :update, :destroy]
 
   def index
-    @monsters = Monster.all
+    if params[:query].present?
+      @monsters = Monster.search_by_monster_characteristic(params[:query])
+    else
+      @monsters = Monster.all
+    end
   end
 
   def new
