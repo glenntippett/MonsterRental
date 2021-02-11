@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :update, :destroy, :show]
   end
 
+  get '/dashboard', to: 'pages#dashboard', as: :dashboard
+
 end
