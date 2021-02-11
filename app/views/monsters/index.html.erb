@@ -1,20 +1,36 @@
 <div class="homepage homepage-bg">
   <h1>Monster Rentals</h1>
   <p>For all your Monster needs</p>
+
+  <div class="d-flex w-75 justify-content-center">
+     <div class="w-50 mr-3">
+      <%= form_tag monsters_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control input-style",
+        placeholder: "Enter monster name..."
+      %>
+      </div>
+    <div>
+      <%= submit_tag "Search", class: "btn btn-primary search-btn" %>
+     </div>
+   <% end %>
+  </div>
 </div>
-
-
 <div class="container">
   <div class="row">
     <% @monsters.each do |monster| %>
-    <div class="col-md-6">
-      <div class="monster-card"
+    <div class="col-md-3">
+      <% if monster.photo.attached? %>
+       <div class="monster-card"
         style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path monster.photo.key, height: 300, width: 400, crop: :fit %>')">
-        <h1>
-          <%= link_to monster.name, monster_path(monster), class: 'text-white monster-card-name' %>
-        </h1>
-      <!-- End of Card -->
+          <h1>
+            <%= link_to monster.name, monster_path(monster), class: 'text-white monster-card-name' %>
+          </h1>
+        <!-- End of Card -->
       </div>
+      <% end %>
+
     </div>
     <% end %>
   </div>
