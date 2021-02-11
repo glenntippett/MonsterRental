@@ -1,6 +1,7 @@
-  <div class="card-monster" style="text-align: center;margin:0 auto; width: 500px; height: 600px; margin-top: 50px; ">
+<div class="card-monster" style="text-align: center;margin:0 auto; width: 500px; height: 600px; margin-top: 50px; ">
 
-    <div class="image" style="margin:10px; background-color :rgba(255,255,255,0.7); background-blend-mode:lighten; background-image: url('<%= cl_image_path @monster.photo.key, height: 300, width: 400, crop: :fit %>')"><%= cl_image_tag @monster.photo.key, height: 300, width: 300, crop: :fill %>
+<div class="card-monster">
+  <div class="image" style="margin:10px; background-color :rgba(255,255,255,0.7); background-blend-mode:lighten; background-image: url('<%= cl_image_path @monster.photo.key, height: 300, width: 400, crop: :fit %>')"><%= cl_image_tag @monster.photo.key, height: 300, width: 300, crop: :fill %>
     </div>
 
     <div class="card-monster-infos" style="margin-top:50px; margin-bottom: 50px;">
@@ -15,5 +16,4 @@
    <%= link_to "Delete", monster_path(@monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
    <%= link_to "Book monster", new_monster_booking_path(@monster), class: "btn btn-ghost" %>
    <%= link_to "Back", monsters_path, class: "btn btn-ghost" %>
-  </div>
-
+</div>
