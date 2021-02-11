@@ -1,14 +1,37 @@
+.monster-cards-container {
+  height: 100vh;
+  display: flex;
+  max-width: 100vw;
+}
+
+.big-monster-card {
+  width: 100%;
+  height: 100%;
+}
+
+.small-monster-cards {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.first-monster-card {
+  height: 80%;
+  border-radius: 8px;
+    &:hover {
+    cursor: pointer;
+  }
+}
+
 .monster-card {
-  height: 400px;
-  margin-top: 16px;
-  border-radius: 4px;
+  height: 280px;
+  border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   &:hover {
-    transform: scale(1.02);
-    transition: 0.5s ease-in-out;
+    cursor: pointer;
   }
 }
 
@@ -16,21 +39,8 @@
   text-decoration: none;
 }
 
-
-.booking-card {
-  height: 400px;
-  margin-top: 16px;
-  border-radius: 4px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &:hover {
-    transform: scale(1.02);
-    transition: 0.5s ease-in-out;
-  }
-}
-
-.booking-card-name:hover {
-  text-decoration: none;
+.background-image-style {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
