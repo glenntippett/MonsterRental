@@ -14,10 +14,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.user = current_user
     @review.booking = @booking
     if @review.save
-      redirect_to reviews_path
+      redirect_to monsters_path
     else
       render :new
     end
@@ -31,6 +30,10 @@ class ReviewsController < ApplicationController
   # end
 
   private
+
+  def find_monster
+    @monster = Monster.find(params[:monster_id])
+  end
 
   def review_params
      params.require(:review).permit(:content, :rating, :booking_id)
