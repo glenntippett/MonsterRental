@@ -1,0 +1,15 @@
+<div class="container d-flex justify-content-center align-items-center h-50">
+  <div class="row w-60">
+    <div class="col">
+      <h1 class="text-center">Monster Details</h1>
+      <%= simple_form_for @monster do |f| %>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.input :description, label: "Describe Your Monster" %>
+      <%= f.input :photo, as: :file %>
+      <%= link_to 'Cancel', root_path, class: 'text-warning mr-2' %>
+      <%= f.submit "Confirm", class: 'btn btn-success' %>
+      <% end %>
+    </div>
+  </div>
+</div>

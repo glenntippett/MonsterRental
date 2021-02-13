@@ -1,0 +1,51 @@
+.booking-form-bg {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), image-url("booking_bg_img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.booking-form-txt {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+   p {
+    opacity: 0.7;   }
+   h2 {
+    align-self: start;
+   }
+}
+
+#booking-form {
+  height: 300px;
+  width: 500px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#add-monster-form {
+  height: 90%;
+  width: 600px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form-left {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
