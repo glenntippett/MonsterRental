@@ -6,7 +6,7 @@ class Monster < ApplicationRecord
   validates :name, presence: true
   validates :description, length: { maximum: 100 }, presence: true
   validates :price, presence: true
-  validates :photo, presence: true
+
 
     include PgSearch::Model
   pg_search_scope :search_by_monster_characteristic,
