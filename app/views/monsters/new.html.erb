@@ -1,12 +1,11 @@
-<div class="container">
-  <h1>Add a new Monster</h1>
-  <%= simple_form_for @monster do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :description, label: "Describe Your Monster" %>
-  <%= f.input :photo, as: :file %>
-  <%= link_to 'Cancel', root_path, class: 'text-danger mr-2' %>
-  <%= f.submit "Confirm", class: 'btn btn-success' %>
-  <% end %>
+<div class="booking-form-bg">
+  <div class="booking-form-left">
+    <div class="card" id="add-monster-form">
+      <%= render "form" %>
+    </div>
+  </div>
+  <div class="booking-form-txt">
+    <h2>Add Your Monster</h2>
+    <p>Fill out the details of your monster so everyone can fulfill their monster needs</p>
+  </div>
 </div>
-
