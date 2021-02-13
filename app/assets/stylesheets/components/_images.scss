@@ -1,0 +1,21 @@
+.walking-monster {
+  height: 80px;
+  width: 80px;
+  background-image: image-url("walking-monster.gif");
+  background-size: contain;
+  position: absolute;
+  animation: walking 50s 2s;
+  z-index: 1;
+  left: -80px;
+  animation-iteration-count: infinite;
+}
+
+@keyframes walking {
+  0% {
+    left: -50px;
+  }
+
+  100% {
+    left: 2000px;
+  }
+}
