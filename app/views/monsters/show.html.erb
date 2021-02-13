@@ -11,9 +11,6 @@
     </div>
     <h2 class="card-monster-pricing">$<%= @monster.price %></h2>
   </div>
-
-   <%= link_to "Edit", edit_monster_path(@monster),class: "btn btn-ghost"%>
-   <%= link_to "Delete", monster_path(@monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
    <%= link_to "Book monster", new_monster_booking_path(@monster), class: "btn btn-ghost" %>
    <%= link_to "Back", monsters_path, class: "btn btn-ghost" %>
 </div>

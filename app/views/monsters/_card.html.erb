@@ -4,6 +4,10 @@
           <h1>
             <%= link_to monster.name, monster_path(monster), class: 'text-white monster-card-name' %>
           </h1>
+          <div class="card-links">
+           <%= link_to "Edit", edit_monster_path(monster),class: "btn btn-ghost"%>
+           <%= link_to "Delete", monster_path(monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
         <!-- End of Card -->
         </div>
 
@@ -13,6 +17,10 @@
           <h1>
             <%= link_to monster.name, monster_path(monster), class: 'text-white monster-card-name' %>
           </h1>
+          <div class="card-links">
+           <%= link_to "Edit", edit_monster_path(monster),class: "btn btn-ghost"%>
+           <%= link_to "Delete", monster_path(monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
         <!-- End of Card -->
         </div>
 <% end %>
