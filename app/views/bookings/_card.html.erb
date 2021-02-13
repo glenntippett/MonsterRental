@@ -12,10 +12,12 @@
        <p> Total: <%= booking.total_price %> $</p>
 
        <% if @future_bookings.include?(booking)  %>
-        <p>hello</p>
+
+        <p></p>
+
        <% elsif @completed_bookings.include?(booking) && booking.review.nil? %>
 
-       <p><%= link_to 'Leave a review', new_booking_review_path(booking.monster), class: 'text-white booking-card-name' %></p>
+       <p><%= link_to 'Leave a review', new_booking_review_path(booking), class: 'text-white booking-card-name' %></p>
        <% else %>
        <p> Your rating: <%=booking.review.rating%></p>
        <p><%= link_to "Read your review", "#" %></p>
