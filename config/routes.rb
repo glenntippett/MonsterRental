@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   resources :monsters do
     resources :bookings, only: [:new, :create]
 
+  end
 
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
 
 
-  end
+
   resources :bookings,only: [:update, :destroy, :show] do
     resources :reviews, only: [ :new, :create ]
   end
