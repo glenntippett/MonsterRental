@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container" style="width: 500px;">
   <h1>Your review</h1>
   <%= simple_form_for [@booking, @review] do |f| %>
-  <%= f.input :rating, collection: (0..5)  %>
-  <%= f.input :content, label: "how is your monster?"%>
+  <%= f.input :rating, collection: (0..5) %>
+  <%= f.input :content, label: "How was your monster?"%>
   <%= link_to 'Cancel', root_path, class: 'text-danger mr-2' %>
   <%= f.submit "Confirm", class: 'btn btn-success' %>
   <% end %>

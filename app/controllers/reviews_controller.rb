@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_booking, only: [:new, :create ]
+  before_action :find_booking, only: [:new, :create]
   def index
     @reviews = Review.all
   end
@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to monsters_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -28,6 +28,11 @@ class ReviewsController < ApplicationController
 
   # def update
   # end
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to dashboard_path
+  end
 
   private
 
