@@ -1,42 +1,81 @@
-<div class="container" id="my-monsters">
-  <div style="text-align: center; margin:50px">
-  <h1>Your Monsters</h1>
+ <div class="d-flex justify-content-center" style = "margin-top: -50px">
+     <div class="d-flex flex-column align-items-center">
+     <div class="nav-item dropdown">
+          <%= image_tag "https://i.pravatar.cc/300", class: "avatar dropdown-toggle image-dashboard", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "My dashboard", dashboard_path, class: "dropdown-item" %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </div>
+        <h1> Hello <%=current_user.username%> </h1>
+        </div>
+  </div>
+
+<div class="container-fluid dashboard-container py-5">
+  <div class="row">
+
+   <div class="col-md-2">
+    <div class="card p-2">
+      <div class="dashboard-infos">
+        <div class="col">
+          <%= link_to "Monsters", dashboard_path(:anchor => "my-monsters"), class: "button-dashboard" %>
+        </div>
+        <div class="col">
+          <%= link_to "Past Bookings", dashboard_path(:anchor => "past-bookings"), class: "button-dashboard"%>
+        </div>
+        <div class="col">
+          <%= link_to "Upcoming Bookings", dashboard_path(:anchor => "upcoming-bookings"), class: "button-dashboard"%>
+        </div>
+        <div class="col">
+          <%= link_to "Reviews", dashboard_path(:anchor => "#") ,class: "button-dashboard"%>
+        </div>
+      </div>
+    </div>
+   </div>
+
+ <div class="col-md-5">
+  <div class="card p-4">
+    <div class="d-flex justify-content-between align-items-center">
+    <h1 class ="text-center">Your Monsters</h1>
+        <span class="nav-link btn btn-add-monster"><%= link_to 'Add Monster', new_monster_path, class: 'text-white' %></span>
+    </div>
     <div class="row">
-      <% @monsters.each do |monster| %>
-      <div class="col-md-6">
-      <%= render 'monsters/card', monster: monster %>
+     <% @monsters.each do |monster| %>
+       <div class="col-6 p-2">
+        <%= render 'monsters/card', monster: monster %>
       </div>
-      <% end %>
+     <% end %>
     </div>
   </div>
-</div>
+ </div>
 
-
-<div class="container" id="past-bookings">
-  <div style="text-align: center; margin:50px">
-    <h1>Your past Bookings</h1>
-      <div class="row">
-      <% @completed_bookings.each do |booking| %>
-      <div class="col-md-6">
-        <%= render 'bookings/card', booking: booking %>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="container" id="upcoming-bookings">
-  <div style="text-align: center; margin:50px">
-    <h1>Your future Bookings</h1>
-      <div class="row">
+ <div class="col-md-5">
+<div class="card p-4 ">
+    <h1> Completed bookings</h1>
+    <div class="row p-2" style="margin: 0px">
       <% @future_bookings.each do |booking| %>
-      <div class="col-md-6">
-        <%= render 'bookings/card', booking: booking %>
-      </div>
+        <div class="col-6 p-0">
+          <%= render 'bookings/card', booking: booking %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<div class="card p-4">
+    <h1> Future bookings</h1>
+    <div class="row p-2" style="margin: 0px">
+      <% @future_bookings.each do |booking| %>
+        <div class="col-6 p-0">
+          <%= render 'bookings/card', booking: booking %>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
+</div>
+</div>
+
+
 
 
 

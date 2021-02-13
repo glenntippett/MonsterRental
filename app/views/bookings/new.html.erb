@@ -1,5 +1,13 @@
-<div class="container">
-  <h1>Book <%= @monster.name %></h1>
-  <%= render "form" %>
+<div class="booking-form-bg">
+  <div class="booking-form-left">
+    <div class="card" id="booking-form">
+      <%= render "form" %>
+    </div>
+  </div>
+  <div class="booking-form-txt">
+    <h2> Book <%= @monster.name %></h2>
+    <p>Thank you for choosing <%= @monster.name %>!<br>Select your start and end date to book your monster for all your monster needs </p>
+  </div>
 </div>
+
 

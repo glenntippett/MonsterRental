@@ -4,8 +4,9 @@ class Monster < ApplicationRecord
   has_many :reviews, through: :bookings
   has_one_attached :photo
   validates :name, presence: true
-  validates :description, presence: true
+  validates :description, length: { maximum: 100 }, presence: true
   validates :price, presence: true
+  validates :photo, presence: true
 
     include PgSearch::Model
   pg_search_scope :search_by_monster_characteristic,
@@ -17,7 +18,7 @@ class Monster < ApplicationRecord
       if reviews.length > 0
       self.reviews.pluck(:rating).sum / reviews.length
       else
-      nil
+      "No review"
       end
     end
 end
