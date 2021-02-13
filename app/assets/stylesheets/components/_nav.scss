@@ -1,0 +1,13 @@
+.navbar {
+  background-color: #FFFFFF;
+}
+
+.nav-item, .navbar-brand {
+  z-index: 2;
+}
+
+.navbar-brand > i {
+  color: #9632c3;
+  font-size: 36px;
+  padding-left: 8px;
+}
