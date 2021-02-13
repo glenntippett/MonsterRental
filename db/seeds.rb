@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning database...'
+Booking.destroy_all
 Monster.destroy_all
 User.destroy_all
+
 
 user1 = User.create(email: "drhammer@gmail.com", password: '123456', username: "drhammer1944")
 
@@ -24,3 +26,15 @@ puts 'Creating monsters'
 end
 
 puts "Created #{Monster.count} monsters"
+
+
+puts 'Creating bookings'
+15.times do
+  booking_start_date =  Faker::Date.forward(days: 12)
+  booking_end_date = Faker::Date.forward(days: 265)
+  booking_total_price = rand(10..1000)
+  puts "Creating bookings"
+  Booking.create!(start_date: booking_start_date, end_date: booking_end_date, total_price: booking_total_price, user_id: user1.id, monster_id: Monster.all.sample.id)
+end
+
+puts "Created #{Booking.count} bookings"

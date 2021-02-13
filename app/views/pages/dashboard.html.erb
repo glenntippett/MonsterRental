@@ -1,0 +1,42 @@
+<div class="container" id="my-monsters">
+  <div style="text-align: center; margin:50px">
+  <h1>Your Monsters</h1>
+    <div class="row">
+      <% @monsters.each do |monster| %>
+      <div class="col-md-6">
+      <%= render 'monsters/card', monster: monster %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="past-bookings">
+  <div style="text-align: center; margin:50px">
+    <h1>Your past Bookings</h1>
+      <div class="row">
+      <% @completed_bookings.each do |booking| %>
+      <div class="col-md-6">
+        <%= render 'bookings/card', booking: booking %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="upcoming-bookings">
+  <div style="text-align: center; margin:50px">
+    <h1>Your future Bookings</h1>
+      <div class="row">
+      <% @future_bookings.each do |booking| %>
+      <div class="col-md-6">
+        <%= render 'bookings/card', booking: booking %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

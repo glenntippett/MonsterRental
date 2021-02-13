@@ -7,6 +7,7 @@
     color: white;
     font-size: 8rem;
   }
+
   p {
     color: white;
     font-size: 24px;
@@ -20,4 +21,17 @@
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image-url('monster-bg.jpg');
   background-size: cover;
   margin: 0;
+}
+
+.popular-section {
+  background-color: #292D3F;
+}
+
+.subtitle {
+  color: white;
+}
+
+.subtitle-description {
+  opacity: 0.8;
+  color: white;
 }
