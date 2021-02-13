@@ -1,12 +1,12 @@
  <% if booking.monster.photo.attached? %>
    <div class="booking-card"
     style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('#')">
-    <div class="row" style="text-align: center; margin:50px">
+    <div class="row" style="text-align: center; margin: 10px 5px">
       <div class="col">
-       <h1>
+       <h6>
          <%= link_to booking.monster.name, monster_path(booking.monster), class: 'text-white booking-card-name' %>
-       </h1>
-       <h4>Your booking details:</h4>
+       </h6>
+       <p>Your booking details:</p>
        <p> From: <%= booking.start_date %></p>
        <p> To: <%= booking.end_date %></p>
        <p> Total: <%= booking.total_price %> $</p>
@@ -29,12 +29,12 @@
 <% else %>
     <div class="booking-card"
     style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('#')">
-    <div class="row" style="text-align: center; margin:50px">
+    <div class="row" style="text-align: center; margin: 10px 5px">
       <div class="col">
-       <h1>
+       <h6>
          <%= link_to booking.monster.name, monster_path(booking.monster), class: 'text-white booking-card-name' %>
-       </h1>
-       <h4>Your booking details:</h4>
+       </h6>
+       <p>Your booking details:</p>
        <p> From: <%= booking.start_date %></p>
        <p> To: <%= booking.end_date %></p>
        <p> Total: <%= booking.total_price %> $</p>

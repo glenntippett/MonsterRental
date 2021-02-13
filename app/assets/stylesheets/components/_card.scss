@@ -51,3 +51,21 @@
 }
 
 
+.booking-card {
+  p{
+    margin-bottom: 0px;
+  }
+  font-size: 12px;
+  // height: 280px;
+  border-radius: 8px;
+  margin: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 10px 0px;
+  justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
