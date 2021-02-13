@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
     @booking.monster = @monster
     @booking.user = current_user
     if @booking.save
-      redirect_to monster_booking_path(@monster, @booking)
+      redirect_to booking_path(@monster, @booking)
     else
       render new
     end
@@ -22,7 +22,8 @@ class BookingsController < ApplicationController
 
   def show
     make_booking
-    @monster = @booking.monster
+    @monster = Monster.find(params[:id])
+    @booking.monster = @monster
   end
 
   def update
