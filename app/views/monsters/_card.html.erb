@@ -1,26 +1,28 @@
 <% if monster.photo.attached? %>
-<div class="monster-card"style="text-align: center; margin: 10px 5px"
-          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path monster.photo.key, height: 300, width: 400, crop: :fit %>')">
-          <h1>
-            <%= link_to monster.name, monster_path(monster), class: 'text-white monster-card-name' %>
-          </h1>
-          <div class="card-links">
-           <%= link_to "Edit", edit_monster_path(monster),class: "btn btn-ghost"%>
-           <%= link_to "Delete", monster_path(monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
-          </div>
-        <!-- End of Card -->
-        </div>
+<div class="monster-card"style="text-align: center; margin: 10px 5px;">
+  <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path monster.photo.key, height: 300, width: 400, crop: :fit %>'); display: flex; align-items: center; flex-grow: 1; margin-bottom: 8px;">
+    <h2>
+      <%= link_to monster.name, monster_path(monster), class: 'monster-card-name' %>
+    </h2>
+  </div>
+
+  <div class="card-links">
+   <%= link_to "Edit", edit_monster_path(monster),class: "btn btn-ghost"%>
+   <%= link_to "Delete", monster_path(monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
+ </div>
+ <!-- End of Card -->
+</div>
 
 <% else %>
 <div class="monster-card" style="text-align: center; margin: 10px 5px"
-          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('#')">
-          <h1>
-            <%= link_to monster.name, monster_path(monster), class: 'text-white monster-card-name' %>
-          </h1>
-          <div class="card-links">
-           <%= link_to "Edit", edit_monster_path(monster),class: "btn btn-ghost"%>
-           <%= link_to "Delete", monster_path(monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
-          </div>
-        <!-- End of Card -->
-        </div>
+style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('#')">
+<h1>
+  <%= link_to monster.name, monster_path(monster), class: 'text-white monster-card-name' %>
+</h1>
+<div class="card-links">
+ <%= link_to "Edit", edit_monster_path(monster),class: "btn btn-ghost"%>
+ <%= link_to "Delete", monster_path(monster), class: "btn btn-ghost", method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
+<!-- End of Card -->
+</div>
 <% end %>
